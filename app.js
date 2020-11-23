@@ -59,5 +59,10 @@ const btnAccion = (e) => {
        tareas[e.target.dataset.id].estado = true
        pintarTareas()
     }
+
+    if (e.target.classList.contains('fa-minus-circle')) {
+        delete tareas[e.target.dataset.id]
+        pintarTareas()
+    }
     e.stopPropagation()
 }
