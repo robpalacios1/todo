@@ -4,7 +4,18 @@ const listaTarea = document.getElementById('lista-tareas');
 const template = document.getElementById('template').content;
 const fragment = document.createDocumentFragment();
 
-let tareas = {}
+let tareas = {
+    1606095359472: {
+        id: 1606095359472,
+        texto: 'Tarea #1',
+        estado: false
+    },
+    1606095451321: {
+        id: 1606095451321,
+        texto: 'Tarea #2',
+        estado: false
+    }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     pintarTareas();
@@ -45,6 +56,13 @@ const pintarTareas = () => {
     Object.values(tareas).forEach(tarea => {
         const clone = template.cloneNode(true)
         clone.querySelector('p').textContent = tarea.texto;
+
+        if(tarea.estado) {
+            clone.querySelector('.alert').classList.replace('alert-warning', 'alert-primary')
+            clone.querySelectorAll('.fas')[0].classList.replace('fa-check-circle', 'fa-undo-alt')
+            clone.querySelector('p').style.textDecoration = 'line-through'
+        }
+
         clone.querySelectorAll('.fas')[0].dataset.id = tarea.id
         clone.querySelectorAll('.fas')[1].dataset.id = tarea.id
         fragment.appendChild(clone)
