@@ -1,6 +1,6 @@
 # :gear: App ToDo :gear:
 
-## what is this project?
+## What is this project?
 This project is made to practice Vanilla Javascript with Framework Boostrap4 and Font-Awesome
 
 ## How to use it?
@@ -13,10 +13,13 @@ To clone this project you have to have installed Git in your local Machine
 ## Info
 ![App without any task](./images/picture1.PNG)
 ##### In this picture you can see the app don't have any task.
+
 ![Add Tasks](./images/picture2.PNG)
 ##### In this picture you can see is with 3 tasks added.
+
 ![Done Tasks](./images/picture3.PNG)
 ##### In this picture you can see that tasks marked with done.
+
 ![Remove Tasks](./images/picture1.PNG)
 ##### In this picture you can see that all tasks were removed
 
