@@ -4,18 +4,20 @@ const listaTarea = document.getElementById('lista-tareas');
 const template = document.getElementById('template').content;
 const fragment = document.createDocumentFragment();
 
-let tareas = {
-    1606095359472: {
-        id: 1606095359472,
-        texto: 'Tarea #1',
-        estado: false
-    },
-    1606095451321: {
-        id: 1606095451321,
-        texto: 'Tarea #2',
-        estado: false
-    }
-}
+//let tareas = {
+//    1606095359472: {
+//        id: 1606095359472,
+//        texto: 'Tarea #1',
+//        estado: false
+//    },
+//    1606095451321: {
+//        id: 1606095451321,
+//        texto: 'Tarea #2',
+//        estado: false
+//    }
+//}
+
+let tareas = {}
 
 document.addEventListener('DOMContentLoaded', () => {
     pintarTareas();
@@ -38,7 +40,7 @@ const setTarea = (e) => {
         console.log('esta vacio')
         return
     }
-    
+
     const tarea = {
         id: Date.now(),
         texto: input.value,
@@ -52,6 +54,16 @@ const setTarea = (e) => {
 }
 
 const pintarTareas = () => {
+
+    if (Object.values(tareas).length === 0) {
+        listaTarea.innerHTML = `
+        <div class="alert alert-dark text-center">
+            ✌ No hay Tareas Para Mostrar ✌
+        </div>
+        `
+        return
+    }
+
     listaTarea.innerHTML = '';
     Object.values(tareas).forEach(tarea => {
         const clone = template.cloneNode(true)
@@ -82,5 +94,12 @@ const btnAccion = (e) => {
         delete tareas[e.target.dataset.id]
         pintarTareas()
     }
+
+    if (e.target.classList.contains('fa-undo-alt')) {
+        console.log(e.target.dataset.id)
+        tareas[e.target.dataset.id].estado = false
+        pintarTareas()
+    }
+
     e.stopPropagation()
 }
