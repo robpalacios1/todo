@@ -12,11 +12,13 @@ To clone this project you have to have installed Git in your local Machine
 
 ## Info
 ![App without any task](./images/picture1.PNG)
-### In this picture you can see the app don't have any task.
+##### In this picture you can see the app don't have any task.
 ![Add Tasks](./images/picture2.PNG)
-### In this picture you can see is with 3 tasks added.
+##### In this picture you can see is with 3 tasks added.
 ![Done Tasks](./images/picture3.PNG)
-### In this picture you can see that tasks marked with done.
+##### In this picture you can see that tasks marked with done.
+![Remove Tasks](./images/picture1.PNG)
+##### In this picture you can see that all tasks were removed
 
 ## Author :book:
 Roberto Palacios [Twitter](https://twitter.com/robpalacios11) | [GitHub](https://github.com/robpalacios1)
